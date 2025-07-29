@@ -5,8 +5,8 @@ Contact::Contact() : f_name(""),l_name(""),n_name(""), number("") {}
 void Contact::setcontact(std::string f_name,std::string l_name,std::string n_name,std::string number,std::string darkest_secret)
 {
     this->f_name = f_name;
-    this->f_name = l_name;
-    this->f_name = n_name;
+    this->l_name = l_name;
+    this->n_name = n_name;
     this->number = number;
     this->darkest_secret = darkest_secret;
 }
