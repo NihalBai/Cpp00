@@ -1,4 +1,4 @@
-#include "Contact.h"
+#include "Contact.hpp"
 
 Contact::Contact() : f_name(""),l_name(""),n_name(""), number("") {}
 
