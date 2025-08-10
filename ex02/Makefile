@@ -1,10 +1,10 @@
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Account.cpp  Account.hpp tests.cpp
+SRC = Account.cpp 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = Phone
+NAME = Acc
 
 all : $(NAME)
 
