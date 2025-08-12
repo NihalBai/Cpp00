@@ -1,7 +1,7 @@
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Account.cpp 
+SRC = Account.cpp tests.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 NAME = Acc
