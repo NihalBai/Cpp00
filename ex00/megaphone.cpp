@@ -15,9 +15,9 @@ int main(int ac , char ** av) {
                std::cout << c;
                j++;
             }
-            std::cout << " ";
             i++;
         }
+        std::cout << std::endl;
     }
     else {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE * \n";

@@ -61,16 +61,18 @@ std::string formatField(const std::string& str) {
 
 
 void PhoneBook::PrintAll() {
-    std::cout << "| Index | First Name | Last Name  | Nickname   |\n";
-    std::cout << "-----------------------------------------------\n";
-
+    std::cout << "|" << formatField("Index") << "|"
+              << formatField("First Name") << "|"
+              << formatField("Last Name") << "|"
+              << formatField("Nickname") << "|" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
     for (int i = 0; i < 8; i++) {
         if (contacts[i].getFirstName().empty()) continue;
-        std::cout << "| "
-                  << std::setw(5) << i << " | "
-                  << formatField(contacts[i].getFirstName()) << " | "
-                  << formatField(contacts[i].getLastName()) << " | "
-                  << formatField(contacts[i].getNickname()) << " | " <<std::endl;;
+        std::string indexStr = std::to_string(i);
+        std::cout << "|" << formatField(indexStr) << "|"
+                  << formatField(contacts[i].getFirstName()) << "|"
+                  << formatField(contacts[i].getLastName()) << "|"
+                  << formatField(contacts[i].getNickname()) << "|" << std::endl;
     }
 }
 

@@ -1,34 +1,25 @@
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <string>
 
 int main() {
     PhoneBook myPhoneBook;
-
-    char choice;
-
-    // myPhoneBook.PrintAll();
+    std::string choice;
 
     do {
-        std::cout << "\nPHONEBOOK MENU\n";
-        std::cout << "A: Add Contact\n";
-        std::cout << "S: Search Contact\n";
-        std::cout << "E: Exit\n";
-        std::cout << "Enter choice: ";
-        std::cin >> choice;
-        std::cin.ignore();
-
-        if (choice == 'A' || choice == 'a') {
+        std::cout << "\nEnter command (ADD, SEARCH, EXIT): ";
+        std::getline(std::cin, choice);
+        if (choice == "ADD") {
             myPhoneBook.Add();
+        } else if (choice == "SEARCH") {
+            myPhoneBook.Search();
+        } else if (choice == "EXIT") {
+            break;
+        } else {
+            std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;
         }
-        else{
-            if (choice == 'S' || choice == 's') {
-                myPhoneBook.Search();
-            }
-        }
-
-        // myPhoneBook.PrintAll();
-    } while (choice != 'E' && choice != 'e');
+    } while (true);
     
-    std::cout << "Exiting phonebook.\n";
+    std::cout << "Exiting phonebook." << std::endl;
     return 0;
 }

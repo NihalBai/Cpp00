@@ -12,7 +12,7 @@ $(NAME) : $(OBJ)
 	$(CPP) $(CFLAGS) -o $@ $^
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
