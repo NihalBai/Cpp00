@@ -40,25 +40,6 @@ void Account::displayAccountsInfos()
 }
 
 
-// void Account::makeDeposit(int deposit)
-// {
-//     int d =getNbDeposits();
-//     int t = getTotalAmount();
-//     d++;
-//     t+=deposit;
-// }
-// bool Account ::makeWithdrawal(int withdrawal )
-// {
-//     int w = getNbWithdrawals();
-//     int t = getTotalAmount();
-//     if(withdrawal <= t)
-//     {   t-=withdrawal;
-//         w++;
-//         return true;
-//     }
-//     return false;
-// }
-
 void Account::makeDeposit(int deposit)
 {
     _displayTimestamp();

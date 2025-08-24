@@ -51,7 +51,6 @@ void PhoneBook::Add()
 
     contacts[index].setcontact(f_name,l_name,n_name,number,d_s);
     index = (index + 1)%8;
-    std::cout << "Contact added at index " << index << "\n";
 }
 
 std::string formatField(const std::string& str) {
@@ -71,20 +70,31 @@ void PhoneBook::PrintAll() {
                   << std::setw(5) << i << " | "
                   << formatField(contacts[i].getFirstName()) << " | "
                   << formatField(contacts[i].getLastName()) << " | "
-                  << formatField(contacts[i].getNickname()) << " |\n";
+                  << formatField(contacts[i].getNickname()) << " | " <<std::endl;;
     }
 }
 
 
-void PhoneBook::Search()
-{
-   PrintAll();
-   int i =-1;
-   std::cout << "Enter index of contact you want :";
-   std::cin >> i;
-   std::cout << "| "
-                  << std::setw(5) << i << " | "
-                  << formatField(contacts[i].getFirstName()) << " | "
-                  << formatField(contacts[i].getLastName()) << " | "
-                  << formatField(contacts[i].getNickname()) << " |\n";
+void PhoneBook::Search() {
+    PrintAll();
+    int i = -1;
+    std::cout << "Enter index of contact you want: ";
+    if (!(std::cin >> i)) {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Invalid input." << std::endl;
+        return;
+    }
+    std::cin.ignore();
+
+    if (i < 0 || i >= 8 || contacts[i].getFirstName().empty()) {
+        std::cout << "Invalid index." << std::endl;
+        return;
+    }
+    
+    std::cout << "First Name: " << contacts[i].getFirstName() << std::endl;
+    std::cout << "Last Name: " << contacts[i].getLastName() << std::endl;
+    std::cout << "Nickname: " << contacts[i].getNickname() << std::endl;
+    std::cout << "Phone Number: " << contacts[i].getNumber() << std::endl;
+    std::cout << "Darkest Secret: " << contacts[i].getDarkestSecret() << std::endl;
 }
